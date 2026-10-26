@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inquiry | Nyraana Fashion</title>
+<link rel="icon" href="images/logo-circle.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="inquiry">
+<main>
+<div class="page-hero">
+  <div class="container">
+    <span class="eyebrow rv">Get in Touch</span>
+    <h1 class="rv d1">Inquiry</h1>
+    <div class="crumbs rv d2">HOME / INQUIRY</div>
+  </div>
+</div>
+
+<section style="padding-top:30px">
+  <div class="container contact-grid">
+    <div class="info rv l">
+      <h3>Contact Details</h3>
+      <ul>
+        <li><i>📞</i><span><a href="tel:+918160518434">+91 8160518434</a></span></li>
+        <li><i>✉️</i><span><a href="mailto:nyraanafashion@gmail.com">nyraanafashion@gmail.com</a></span></li>
+        <li><i>📍</i><span>Sindhu Bhavan Road, Bopal, Ahmedabad</span></li>
+        <li><i>💬</i><span><a href="https://wa.me/918160518434" target="_blank" rel="noopener">Chat on WhatsApp</a></span></li>
+      </ul>
+      <p style="font-size:.9rem;opacity:.85">Collections include 2 Piece Sets, Anarkali Suits, Cord Sets, Sarees, Kurtis and Tops.</p>
+    </div>
+
+    <form id="inquiryForm" class="rv r">
+      <h3 style="font-size:2rem;margin-bottom:18px">Send us your inquiry</h3>
+      <div class="alert" id="alert"></div>
+      <input type="hidden" name="_subject" value="New Inquiry – Nyraana Fashion Website">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="row">
+        <div class="field"><input name="name" placeholder=" " required><label>Your Name</label></div>
+        <div class="field"><input name="phone" type="tel" placeholder=" " required><label>Phone / WhatsApp</label></div>
+      </div>
+      <div class="field"><input name="email" type="email" placeholder=" " required><label>Email Address</label></div>
+      <div class="field"><select name="category"></select><label>Interested In</label></div>
+      <div class="field"><textarea name="message" placeholder=" " required></textarea><label>Your Message / Requirement</label></div>
+      <button type="submit" class="btn" style="width:100%">Send Inquiry</button>
+      <p class="note">Your details go directly to nyraanafashion@gmail.com</p>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="map rv">
+      <iframe loading="lazy" title="Nyraana Fashion location" src="https://www.google.com/maps?q=Sindhu+Bhavan+Road+Bopal+Ahmedabad&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
