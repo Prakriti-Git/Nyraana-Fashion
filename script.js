@@ -26,8 +26,7 @@ const PRODUCTS = [
   { name: "SCV Rajniti", cat: "Sarees", desc: "Saree", images: ["images/products/Saree/scv-rajniti/WhatsApp Image 2026-10-27 at 11.57.32 PM.jpeg", "images/products/Saree/scv-rajniti/WhatsApp Image 2026-10-27 at 11.57.32 PM (1).jpeg", "images/products/Saree/scv-rajniti/WhatsApp Image 2026-10-27 at 11.57.33 PM.jpeg", "images/products/Saree/scv-rajniti/WhatsApp Image 2026-10-27 at 11.57.33 PM (1).jpeg", "images/products/Saree/scv-rajniti/WhatsApp Image 2026-10-27 at 11.57.33 PM (2).jpeg", "images/products/Saree/scv-rajniti/WhatsApp Image 2026-10-27 at 11.57.34 PM.jpeg"] },
   { name: "Rang Maanch", cat: "Sarees", desc: "Saree", images: ["images/products/Saree/RANG MAANCH/WhatsApp Image 2026-10-28 at 1.03.44 AM.jpeg", "images/products/Saree/RANG MAANCH/WhatsApp Image 2026-10-28 at 1.03.44 AM (1).jpeg", "images/products/Saree/RANG MAANCH/WhatsApp Image 2026-10-28 at 1.03.44 AM (2).jpeg", "images/products/Saree/RANG MAANCH/WhatsApp Image 2026-10-28 at 1.03.44 AM (3).jpeg", "images/products/Saree/RANG MAANCH/WhatsApp Image 2026-10-28 at 1.03.45 AM.jpeg"] },
   { name: "Sarthi", cat: "Sarees", desc: "Saree", images: ["images/products/Saree/Sarthi/bangan saree.jpeg", "images/products/Saree/Sarthi/Deep Green Saree with Floral Embroidery.png", "images/products/Saree/Sarthi/Deep Teal Saree with Floral Embroidery.png", "images/products/Saree/Sarthi/Maroon Saree with Floral Embroidery.png", "images/products/Saree/Sarthi/Mustard Yellow Saree with Floral Embroidery.png"] },
-  { name: "Fabric Top", cat: "Tops", desc: "Top", images: ["images/products/Top/fabric.jpeg"] },
-  { name: "Nano Short Top", cat: "Tops", desc: "Top", images: ["images/products/Top/nano short top.jpeg"] },
+  { name: "Nano Short Top", cat: "Tops", desc: "Short top in rayon fabric", images: ["images/products/Top/nano short top.jpeg", "images/products/Top/fabric.jpeg"] },
 ];
 
 const ICON_HANGER = `<svg class="ph" viewBox="0 0 100 80" fill="none" stroke="#9a6f10" stroke-width="3" stroke-linecap="round"><path d="M50 22c0-8 10-8 10-16S46-2 42 6"/><path d="M50 22L6 62c-2 4 0 8 6 8h76c6 0 8-4 6-8L50 22z"/></svg>`;
@@ -104,7 +103,7 @@ if(pg){
    <article class="product rv d${(k%4)+1}" data-c="${p.cat}">
      <div class="pimg">${ICON_HANGER}
        <img class="photo" src="${p.images[0]}" alt="${p.name}" loading="lazy" onerror="this.remove()"></div>
-     ${p.images.length>1?`<div class="pgallery" aria-label="More images of ${p.name}">${p.images.map((image,index)=>`<button type="button" class="${index===0?"selected":""}" data-image="${image}" aria-label="Show image ${index+1} of ${p.name}" aria-pressed="${index===0}"><img src="${image}" alt="" loading="lazy" onerror="this.parentElement.remove()"></button>`).join("")}</div>`:""}
+     ${p.images.length>1?`<div class="pgallery" aria-label="More images of ${p.name}">${p.images.slice(1).map((image,index)=>`<button type="button" data-image="${image}" aria-label="Show image ${index+2} of ${p.name}" aria-pressed="false"><img src="${image}" alt="" loading="lazy" onerror="this.parentElement.remove()"></button>`).join("")}</div>`:""}
      <div class="pinfo"><h3>${p.name}</h3><p>${p.desc}</p>
        <a href="inquiry.html?product=${encodeURIComponent(p.name)}">Enquire <span>→</span></a></div>
    </article>`).join("");
